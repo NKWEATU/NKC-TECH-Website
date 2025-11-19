@@ -679,3 +679,48 @@ nav {
     font-size: 0.9rem;
   }
 }
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none; /* hidden on desktop */
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* show toggle on mobile */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -220px; /* start hidden outside screen */
+    flex-direction: column;
+    background: #fff;
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    right: 10px; /* slide in */
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Logo scaling */
+  .circular-frame img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+}
