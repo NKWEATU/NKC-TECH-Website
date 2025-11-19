@@ -556,3 +556,40 @@ header {
     object-fit: cover;
     margin-bottom: 15px;
 }
+/* Logo + Text Container */
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+/* Brand Name Styling */
+.brand-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #222; /* or any color you like */
+}
+
+/* Circular Logo Styling */
+.circular-frame img {
+  width: 50px;  /* adjust as needed */
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .circular-frame img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    font-size: 0.9rem;
+  }
+}
