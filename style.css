@@ -1,0 +1,558 @@
+/* -------------------- GLOBAL -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: gold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d4af37;
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    background: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-text {
+    color: gold;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: gold;
+}
+
+#darkModeBtn {
+    border: none;
+    background: none;
+    color: gold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Sticky header shadow */
+header.sticky {
+    background: #000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+/* -------------------- HERO -------------------- */
+#hero {
+    background: linear-gradient(to bottom, black, #222);
+    color: gold;
+    padding: 140px 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+#hero p {
+    color: white;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+/* -------------------- ANIMATIONS -------------------- */
+@keyframes fade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+/* Activated on scroll */
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------- COUNTERS -------------------- */
+#counters {
+    padding: 60px 0;
+    background: #f8f8f8;
+}
+
+.counters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.counter-box h3 {
+    font-size: 48px;
+    color: black;
+}
+
+.counter-box p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* -------------------- SERVICES -------------------- */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.sub-title {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: gold;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: black;
+    color: gold;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* -------------------- PRICING -------------------- */
+#pricing {
+    padding: 60px 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.price-card {
+    background: #fff;
+    border: 2px solid gold;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card .price {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: black;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.price-card ul li {
+    margin: 10px 0;
+}
+
+.popular {
+    background: black;
+    color: gold;
+    border-color: black;
+}
+
+.popular .btn {
+    background: gold;
+    color: black;
+}
+
+/* -------------------- TESTIMONIALS -------------------- */
+#testimonials {
+    padding: 60px 0;
+    background: #fafafa;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.test-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.test-card h4 {
+    margin-top: 15px;
+    color: black;
+}
+
+/* -------------------- TEAM -------------------- */
+#team {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.team-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 4px solid gold;
+}
+
+.team-card h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+/* -------------------- CONTACT -------------------- */
+#contactForm {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+#successMsg {
+    color: green;
+    display: none;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background: black;
+    padding: 25px;
+    text-align: center;
+    color: gold;
+    margin-top: 40px;
+}
+
+/* -------------------- DARK MODE -------------------- */
+body.dark {
+    background: #111;
+    color: white;
+}
+
+body.dark header {
+    background: gold;
+}
+
+body.dark .logo-text {
+    color: black;
+}
+
+body.dark .nav-links a {
+    color: black;
+}
+
+body.dark #hero {
+    background: linear-gradient(to bottom, gold, #333);
+    color: black;
+}
+
+body.dark .service-card {
+    background: gold;
+    color: black;
+}
+
+body.dark footer {
+    background: gold;
+    color: black;
+}
+/* CERTIFICATIONS SECTION */
+#certifications {
+    padding: 80px 10%;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+#certifications .section-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+#certifications .section-subtitle {
+    color: #d4d4d4;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.cert-card {
+    background: #000;
+    border: 2px solid gold;
+    border-radius: 12px;
+    padding: 20px;
+    transition: 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.cert-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cert-card h3 {
+    color: gold;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.cert-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.whatsapp-chat-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: transform .3s ease;
+}
+
+.whatsapp-chat-btn:hover {
+    transform: scale(1.15);
+}
+
+.floating-socials {
+    position: fixed;
+    top: 30%;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    padding: 6px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px gold;
+}
+
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.round-logo {
+    /* Set a fixed size for the logo */
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+
+    /* Create the perfect circle */
+    border-radius: 50%;
+
+    /* Optional: Ensure the image covers the circle without distortion */
+    object-fit: cover;
+}
+
+/* ----- HEADER ----- */
+header {
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ----- CIRCULAR LOGO FRAME ----- */
+.circular-frame {
+    width: 60px;             /* Adjust size */
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;        /* Makes the frame circular */
+    border: 3px solid #222;  /* Optional border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Ensures perfect fit inside circle */
+}
+
+/* ----- NAVIGATION ----- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#darkModeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+/* ABOUT US SECTION */
+#about\ us .container {
+    text-align: center;   /* Center all text */
+}
+
+/* TEAM CARD */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+/* IMAGE STYLE */
+.team-card img {
+    width: 160px;              /* Adjust size */
+    height: 160px;
+    border-radius: 50%;        /* Circular photo */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
