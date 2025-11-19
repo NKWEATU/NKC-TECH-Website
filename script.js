@@ -117,5 +117,11 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  navLinks.classList.toggle('active'); // toggles menu visibility
 });
+document.querySelectorAll('.nav-links li a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active'); // closes menu after click
+  });
+});
+
