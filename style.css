@@ -350,64 +350,66 @@ body.dark footer {
     background: gold;
     color: black;
 }
-/* CERTIFICATIONS SECTION */
+/* -------------------- CERTIFICATIONS SECTION -------------------- */
 #certifications {
-    padding: 80px 10%;
-    background: #111;
-    color: white;
+    padding: 60px 5%;
+    background: #f9f9f9;
     text-align: center;
 }
 
 #certifications .section-title {
-    font-size: 2.4rem;
-    font-weight: bold;
-    color: gold;
+    font-size: 2rem;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 #certifications .section-subtitle {
-    color: #d4d4d4;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 40px;
+    color: #555;
 }
 
+/* Grid Layout */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
+/* Certificate Cards */
 .cert-card {
-    background: #000;
-    border: 2px solid gold;
-    border-radius: 12px;
+    background: #fff;
     padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: 0.3s ease;
-}
-
-.cert-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
 
 .cert-card img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
 .cert-card h3 {
-    color: gold;
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-size: 1.3rem;
+    color: #222;
 }
 
 .cert-card p {
-    color: #ccc;
     font-size: 0.95rem;
-    line-height: 1.5;
+    color: #555;
 }
+
+/* Hover Effect */
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
 
 .whatsapp-chat-btn {
     position: fixed;
