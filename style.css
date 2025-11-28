@@ -109,13 +109,6 @@ nav {
     color: gold;
 }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1100;
-}
 
 /* -------------------- HERO -------------------- */
 #hero {
@@ -486,38 +479,77 @@ body.dark footer {
     box-shadow: 0 0 15px gold;
 }
 
-/* -------------------- MOBILE RESPONSIVENESS -------------------- */
+/* -------------------- MOBILE MENU TOGGLE (CLEAN) -------------------- */
 @media (max-width: 768px) {
+    /* Hamburger toggle at top-right corner */
     .menu-toggle {
         display: block;
+        position: absolute;
+        top: 15px;       /* top-right corner */
+        right: 20px;
+        font-size: 2rem;
+        z-index: 2000;
+        cursor: pointer;
+        color: gold;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    .menu-toggle:hover {
+        transform: scale(1.2) rotate(10deg);
+        color: #ffecb3;
+    }
+
+    .menu-toggle.active {
+        transform: scale(1.2) rotate(90deg);
+        color: #ffd700;
+    }
+
+    /* Navigation menu hidden off-screen initially */
     .nav-links {
-        display: none;
+        display: flex;               /* keep flex for alignment */
         position: absolute;
-        top: 70px;
-        right: 10px;
+        top: 60px;                   /* below header */
+        right: -250px;               /* hidden initially */
+        width: 220px;
         flex-direction: column;
-        background: #fff;
-        width: 200px;
+        background: #222;
         padding: 15px;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        opacity: 0;
+        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        z-index: 1500;
     }
 
+    /* When menu is active (clicked) */
     .nav-links.active {
-        display: flex;
+        right: 10px;                 /* slide-in */
+        opacity: 1;
     }
 
-    .circular-frame img {
-        width: 40px;
-        height: 40px;
+    /* Links styling for mobile */
+    .nav-links li {
+        margin: 12px 0;
     }
 
-    .brand-name {
-        font-size: 1.2rem;
+    .nav-links li a,
+    #darkModeBtn {
+        color: gold;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .nav-links li a:hover {
+        color: #ffecb3;
+        transform: translateX(5px);
+    }
+
+    /* Optional: prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 }
+
 /* FLEX CONTAINER SECTION */
 .flex-container {
     display: flex;
@@ -564,31 +596,7 @@ body.dark footer {
     line-height: 1.5;
 }
 
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .flex-item {
-        padding: 20px;
-        font-size: 0.95rem;
-    }
 
-    .flex-item .sub-title {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .flex-container {
-        padding: 10px 0;
-    }
-
-    .flex-item {
-        padding: 15px;
-    }
-
-    .flex-item .sub-title {
-        font-size: 1rem;
-    }
-}
 /* -------------------- FLEX CONTAINER HERO / SERVICES -------------------- */
 .flex-container {
     display: flex;
@@ -632,243 +640,7 @@ body.dark footer {
     }
 }
 
-/* -------------------- MOBILE NAVIGATION FIX -------------------- */
-@media (max-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;          /* below the header */
-        right: -220px;      /* hidden initially offscreen */
-        width: 220px;       /* menu width */
-        background: #222;   /* dark background for contrast */
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        z-index: 1000;
-        opacity: 0;         /* hidden initially */
-    }
 
-    /* Slide-in effect when active */
-    .nav-links.active {
-        right: 10px;
-        opacity: 1;
-    }
-
-    .nav-links li {
-        margin: 12px 0;
-    }
-
-    .nav-links li a {
-        color: gold;       /* visible on dark background */
-        font-weight: 500;
-        font-size: 1rem;
-    }
-
-    #darkModeBtn {
-        color: gold;       /* visible toggle button */
-    }
-}
-/* MOBILE NAVIGATION FIX */
-@media (max-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;          /* below the header */
-        right: -220px;      /* hidden initially offscreen */
-        width: 220px;       /* menu width */
-        background: #222;   /* dark background for contrast */
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        z-index: 1000;
-    }
-
-    /* Slide-in effect when active */
-    .nav-links.active {
-        right: 10px;
-        opacity: 1;
-    }
-
-    .nav-links li {
-        margin: 12px 0;
-    }
-
-    .nav-links li a {
-        color: gold;       /* visible on dark background */
-        font-weight: 500;
-        font-size: 1rem;
-    }
-
-    #darkModeBtn {
-        color: gold;       /* visible toggle button */
-    }
-}
-/* -------------------- FLEX CONTAINER HERO / SERVICES -------------------- */
-.flex-container {
-    display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
-    flex-wrap: wrap;         /* allow items to wrap on smaller screens */
-    padding: 20px;
-    gap: 20px;
-}
-
-.flex-item {
-    background: linear-gradient(135deg, #f9d423, #ff4e50); /* captivating gradient */
-    color: #111;
-    padding: 25px 35px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    width: 100%;
-    max-width: 600px;       /* fits nicely in container */
-}
-
-.flex-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.sub-title {
-    margin: 10px 0;
-    font-size: 1.5rem;
-}
-
-/* Optional: adjust font size and padding on small screens */
-@media (max-width: 480px) {
-    .flex-item {
-        padding: 15px 20px;
-    }
-
-    .sub-title {
-        font-size: 1.2rem;
-    }
-}
-
-/* -------------------- MOBILE NAVIGATION FIX -------------------- */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav {
-        position: relative;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;          /* below the header */
-        right: -240px;      /* hidden initially offscreen */
-        width: 220px;       /* menu width */
-        background: #222;   /* dark background */
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        z-index: 1000;
-        opacity: 0;         /* hidden initially */
-    }
-
-    .nav-links.active {
-        right: 10px;
-        opacity: 1;
-    }
-
-    .nav-links li {
-        margin: 12px 0;
-    }
-
-    .nav-links li a {
-        color: gold;       /* visible on dark background */
-        font-weight: 500;
-        font-size: 1rem;
-        text-align: left;
-    }
-
-    #darkModeBtn {
-        color: gold;       /* visible toggle button */
-        margin-top: 10px;
-    }
-
-    /* Make the nav-links appear over other content */
-    body.menu-open {
-        overflow: hidden;   /* prevent scrolling when menu open */
-    }
-}
-/* -------------------- CONSOLIDATED MOBILE NAVIGATION FIX -------------------- */
-@media (max-width: 768px) {
-    /* 1. Ensure the Toggle is visible on mobile */
-    .menu-toggle {
-        display: block;
-        color: gold;
-        z-index: 1100; /* Ensure it stays above the menu */
-    }
-
-    /* 2. Hide the full desktop menu */
-    nav {
-        /* Ensure nav itself is positioned correctly if needed, but the list should control placement */
-        position: relative;
-    }
-
-    /* 3. The default HIDDEN state for the menu list */
-    .nav-links {
-        /* Important: Change display:flex to default on mobile. */
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;            /* Below header */
-        right: -240px;        /* Hidden off-screen */
-        width: 220px;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        z-index: 1000;
-        opacity: 0;           /* Hidden (but present) state */
-
-        /* lively gradient background */
-        background: linear-gradient(135deg, #222, #333, #444);
-        background-blend-mode: multiply;
-    }
-
-    /* 4. The ACTIVE (visible) state */
-    .nav-links.active {
-        right: 10px;          /* Slides into view */
-        opacity: 1;           /* Fully visible */
-    }
-
-    /* Styling for list items and links inside the menu */
-    .nav-links li {
-        margin: 12px 0;
-    }
-
-    .nav-links li a {
-        color: gold;
-        font-weight: 500;
-        font-size: 1rem;
-        text-align: left;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    #darkModeBtn {
-        color: gold;
-        margin-top: 10px;
-    }
-
-    /* Other Mobile Styles (Keep these) */
-    .circular-frame {
-        width: 50px;
-        height: 50px;
-        border: 3px solid gold;
-    }
-}
 
 /* Ensure desktop remains correct */
 @media (min-width: 769px) {
@@ -957,11 +729,4 @@ body.dark footer {
         border-radius: 50%; /* ensures the image itself is circular */
     }
 }
-
-.menu-toggle {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: gold;
 
