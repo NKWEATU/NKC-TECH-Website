@@ -707,3 +707,84 @@ body.dark footer {
         color: gold;       /* visible toggle button */
     }
 }
+/* -------------------- FLEX CONTAINER HERO / SERVICES -------------------- */
+.flex-container {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    flex-wrap: wrap;         /* allow items to wrap on smaller screens */
+    padding: 20px;
+    gap: 20px;
+}
+
+.flex-item {
+    background: linear-gradient(135deg, #f9d423, #ff4e50); /* captivating gradient */
+    color: #111;
+    padding: 25px 35px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 600px;       /* fits nicely in container */
+}
+
+.flex-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.sub-title {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+/* Optional: adjust font size and padding on small screens */
+@media (max-width: 480px) {
+    .flex-item {
+        padding: 15px 20px;
+    }
+
+    .sub-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* -------------------- MOBILE NAVIGATION FIX -------------------- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;          /* below the header */
+        right: -220px;      /* hidden initially offscreen */
+        width: 220px;       /* menu width */
+        background: #222;   /* dark background for contrast */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        z-index: 1000;
+        opacity: 0;         /* hidden initially */
+    }
+
+    /* Slide-in effect when active */
+    .nav-links.active {
+        right: 10px;
+        opacity: 1;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .nav-links li a {
+        color: gold;       /* visible on dark background */
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    #darkModeBtn {
+        color: gold;       /* visible toggle button */
+    }
+}
