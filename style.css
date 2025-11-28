@@ -825,3 +825,43 @@ nav {
   margin: 0;
   font-size: 24px;
 }
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;       /* allows items to wrap on smaller screens */
+  padding: 20px;
+  gap: 20px;             /* space between items if multiple */
+}
+
+.flex-item {
+  background-color: #f0f0f0;
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;           /* full width on mobile */
+  max-width: 400px;      /* limit width on larger screens */
+}
+
+.flex-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.sub-title {
+  margin: 0;
+  font-size: 1.5rem;     /* relative size for scaling on mobile */
+}
+
+/* Optional: adjust font size on very small screens */
+@media (max-width: 480px) {
+  .sub-title {
+    font-size: 1.2rem;
+  }
+
+  .flex-item {
+    padding: 15px 20px;
+  }
+}
