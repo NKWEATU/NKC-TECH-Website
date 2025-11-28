@@ -901,16 +901,3 @@ body.dark footer {
         border-radius: 50%; /* ensures the image itself is circular */
     }
 }
-/* -------------------- MOBILE MENU TOGGLE -------------------- */
-.menu-toggle {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1100;
-    color: white; /* makes the hamburger menu lines white */
-    transition: color 0.3s ease;
-}
-
-.menu-toggle:hover {
-    color: gold; /* optional: hover effect */
-}
