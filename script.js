@@ -116,3 +116,5 @@ document.querySelectorAll('.nav-links li a').forEach(link => {
         document.body.classList.remove('menu-open'); // allow scroll again
     });
 });
+
+

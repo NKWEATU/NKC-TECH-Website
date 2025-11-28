@@ -802,31 +802,87 @@ body.dark footer {
         overflow: hidden;   /* prevent scrolling when menu open */
     }
 }
-/* -------------------- MOBILE NAVIGATION LIVING THEME -------------------- */
+/* -------------------- CONSOLIDATED MOBILE NAVIGATION FIX -------------------- */
 @media (max-width: 768px) {
+    /* 1. Ensure the Toggle is visible on mobile */
     .menu-toggle {
         display: block;
         color: gold;
+        z-index: 1100; /* Ensure it stays above the menu */
     }
 
+    /* 2. Hide the full desktop menu */
     nav {
+        /* Ensure nav itself is positioned correctly if needed, but the list should control placement */
         position: relative;
     }
 
+    /* 3. The default HIDDEN state for the menu list */
     .nav-links {
+        /* Important: Change display:flex to default on mobile. */
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 70px;            /* below header */
-        right: -240px;        /* hidden initially */
+        top: 70px;            /* Below header */
+        right: -240px;        /* Hidden off-screen */
         width: 220px;
         padding: 15px;
         border-radius: 12px;
         box-shadow: 0 6px 18px rgba(0,0,0,0.25);
         transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
         z-index: 1000;
-        opacity: 0;
+        opacity: 0;           /* Hidden (but present) state */
 
+        /* lively gradient background */
+        background: linear-gradient(135deg, #222, #333, #444);
+        background-blend-mode: multiply;
+    }
+
+    /* 4. The ACTIVE (visible) state */
+    .nav-links.active {
+        right: 10px;          /* Slides into view */
+        opacity: 1;           /* Fully visible */
+    }
+
+    /* Styling for list items and links inside the menu */
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .nav-links li a {
+        color: gold;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: left;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    #darkModeBtn {
+        color: gold;
+        margin-top: 10px;
+    }
+
+    /* Other Mobile Styles (Keep these) */
+    .circular-frame {
+        width: 50px;
+        height: 50px;
+        border: 3px solid gold;
+    }
+}
+
+/* Ensure desktop remains correct */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important; /* Forces menu to show on desktop */
+        right: auto !important;   /* Reset position */
+        opacity: 1 !important;    /* Reset opacity */
+        position: static;         /* Put it back in the flow */
+        background: none;         /* Remove mobile background */
+        flex-direction: row;      /* Desktop layout */
+        padding: 0;
+        box-shadow: none;
+    }
+}
         /* lively gradient background */
         background: linear-gradient(135deg, #222, #333, #444);
         background-blend-mode: multiply;
@@ -901,3 +957,4 @@ body.dark footer {
         border-radius: 50%; /* ensures the image itself is circular */
     }
 }
+
