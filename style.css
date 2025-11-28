@@ -670,3 +670,40 @@ body.dark footer {
         color: gold;       /* visible toggle button */
     }
 }
+/* MOBILE NAVIGATION FIX */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;          /* below the header */
+        right: -220px;      /* hidden initially offscreen */
+        width: 220px;       /* menu width */
+        background: #222;   /* dark background for contrast */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Slide-in effect when active */
+    .nav-links.active {
+        right: 10px;
+        opacity: 1;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .nav-links li a {
+        color: gold;       /* visible on dark background */
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    #darkModeBtn {
+        color: gold;       /* visible toggle button */
+    }
+}
