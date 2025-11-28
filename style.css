@@ -772,3 +772,56 @@ nav {
     transform: translateY(-3px); /* lift effect */
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
+/* CSS */
+.flex-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;    /* center vertically */
+  padding: 20px;
+}
+
+.flex-item {
+  background-color: #f5f5f5; /* light gray background */
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth animation */
+  cursor: pointer;
+}
+
+.flex-item:hover {
+  transform: scale(1.05); /* grow slightly on hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+.sub-title {
+  margin: 10px 0;
+}
+
+/* CSS */
+.flex-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;    /* center vertically */
+  height: 200px;          /* adjust as needed */
+  padding: 20px;
+}
+
+.flex-item {
+  background-color: #f0f0f0; /* light gray background */
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
+  cursor: pointer;
+}
+
+.flex-item:hover {
+  transform: scale(1.1); /* grow slightly on hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+.sub-title {
+  margin: 0;
+  font-size: 24px;
+}
