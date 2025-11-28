@@ -864,3 +864,23 @@ body.dark footer {
         overflow: hidden;
     }
 }
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1100;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: gold; /* visible */
+}
+
+/* Hover animation for liveliness */
+.menu-toggle:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: #ffecb3; /* subtle color change on hover */
+}
+
+/* Animate when active (clicked) */
+.menu-toggle.active {
+    transform: scale(1.2) rotate(90deg);
+    color: #ffd700;
+}

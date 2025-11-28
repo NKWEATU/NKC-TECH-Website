@@ -1,15 +1,14 @@
-/* ---------------- DARK MODE ---------------- */
+/* -------------------- DARK MODE -------------------- */
 const toggleBtn = document.getElementById("darkModeBtn");
 
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-
     toggleBtn.textContent = document.body.classList.contains("dark")
         ? "☀️"
         : "🌙";
 });
 
-/* ---------------- STICKY HEADER ---------------- */
+/* -------------------- STICKY HEADER -------------------- */
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
@@ -20,7 +19,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-/* ---------------- CONTACT FORM ---------------- */
+/* -------------------- CONTACT FORM -------------------- */
 const form = document.getElementById("contactForm");
 const successMsg = document.getElementById("successMsg");
 
@@ -28,9 +27,13 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     successMsg.style.display = "block";
     form.reset();
+
+    setTimeout(() => {
+        successMsg.style.display = "none";
+    }, 4000); // hide message after 4 seconds
 });
 
-/* ---------------- COUNTER ANIMATION ---------------- */
+/* -------------------- COUNTER ANIMATION -------------------- */
 const counters = document.querySelectorAll(".counter");
 
 const startCounters = () => {
@@ -53,7 +56,6 @@ const startCounters = () => {
 };
 
 let counterStarted = false;
-
 window.addEventListener("scroll", () => {
     const countersSection = document.getElementById("counters");
 
@@ -65,7 +67,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-/* ---------------- FADE-UP ON SCROLL (AOS-like) ---------------- */
+/* -------------------- FADE-UP ON SCROLL -------------------- */
 const fadeElements = document.querySelectorAll(".fade-up");
 
 const reveal = () => {
@@ -83,7 +85,7 @@ const reveal = () => {
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
 
-// Fade-in animation for certifications
+/* -------------------- CERTIFICATIONS FADE-IN -------------------- */
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -96,39 +98,21 @@ document.querySelectorAll('.cert-card').forEach(card => {
     observer.observe(card);
 });
 
-/* Fade-in Animation */
-
-// Scroll Reveal Effect
-function revealElements() {
-    const elements = document.querySelectorAll('.reveal');
-
-    elements.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 100;
-
-        if (elementTop < windowHeight - revealPoint) {
-            el.classList.add('active');
-        }
-    });
-}
-
+/* -------------------- MOBILE MENU TOGGLE -------------------- */
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active'); // toggles menu visibility
-  document.body.classList.toggle('menu-open'); // optional: prevent background scroll
+    navLinks.classList.toggle('active');        // toggle menu visibility
+    menuToggle.classList.toggle('active');     // animate hamburger
+    document.body.classList.toggle('menu-open'); // optional: prevent scroll when menu open
 });
 
 // Close menu when a nav link is clicked
 document.querySelectorAll('.nav-links li a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    document.body.classList.remove('menu-open'); // allow scroll again
-  });
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');  // reset hamburger icon
+        document.body.classList.remove('menu-open'); // allow scroll again
+    });
 });
-
-
-
-
