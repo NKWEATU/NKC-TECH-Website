@@ -42,24 +42,8 @@ header {
     z-index: 1000;
     padding: 15px 0;
     transition: 0.3s;
-}
-
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-img {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-}
-
-.logo-text {
-    color: gold;
-    font-size: 28px;
-    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -68,35 +52,69 @@ header {
     align-items: center;
 }
 
+/* Logo + Brand */
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.circular-frame {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: gold;
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 20px;
+    align-items: center;
 }
 
-.nav-links a {
-    color: white;
+.nav-links li a {
     text-decoration: none;
+    color: white;
     font-size: 16px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: gold;
+    font-weight: 500;
 }
 
 #darkModeBtn {
     border: none;
     background: none;
-    color: gold;
     cursor: pointer;
     font-size: 20px;
+    color: gold;
 }
 
-/* Sticky header shadow */
-header.sticky {
-    background: #000;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1100;
 }
 
 /* -------------------- HERO -------------------- */
@@ -126,7 +144,6 @@ header.sticky {
     transition: 0.8s ease;
 }
 
-/* Activated on scroll */
 .fade-up.active {
     opacity: 1;
     transform: translateY(0);
@@ -164,7 +181,7 @@ header.sticky {
 }
 
 .sub-title {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
     font-size: 22px;
     color: gold;
@@ -269,23 +286,26 @@ header.sticky {
     color: black;
 }
 
-/* -------------------- TEAM -------------------- */
-#team {
-    padding: 60px 0;
+/* -------------------- TEAM / ABOUT US -------------------- */
+#about\ us {
     text-align: center;
+    padding: 60px 0;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
 
 .team-card img {
     width: 180px;
     height: 180px;
-    border-radius: 100%;
+    border-radius: 50%;
     object-fit: cover;
     border: 4px solid gold;
-}
-
-.team-card h3 {
-    margin-top: 10px;
-    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 /* -------------------- CONTACT -------------------- */
@@ -328,10 +348,7 @@ body.dark header {
     background: gold;
 }
 
-body.dark .logo-text {
-    color: black;
-}
-
+body.dark .logo-text,
 body.dark .nav-links a {
     color: black;
 }
@@ -350,7 +367,8 @@ body.dark footer {
     background: gold;
     color: black;
 }
-/* -------------------- CERTIFICATIONS SECTION -------------------- */
+
+/* -------------------- CERTIFICATIONS -------------------- */
 #certifications {
     padding: 60px 5%;
     background: #f9f9f9;
@@ -369,14 +387,12 @@ body.dark footer {
     color: #555;
 }
 
-/* Grid Layout */
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* Certificate Cards */
 .cert-card {
     background: #fff;
     padding: 20px;
@@ -404,35 +420,48 @@ body.dark footer {
     color: #555;
 }
 
-/* Hover Effect */
 .cert-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-
-.whatsapp-chat-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    color: white;
-    font-size: 32px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+/* -------------------- STYLISH LIST -------------------- */
+.center-bold {
     text-align: center;
-    line-height: 60px;
-    text-decoration: none;
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
-    z-index: 9999;
-    transition: transform .3s ease;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.whatsapp-chat-btn:hover {
-    transform: scale(1.15);
+.stylish-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
 }
 
+.stylish-list li {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stylish-list li:hover {
+    background-color: #45a049;
+    font-weight: bold;
+    color: #ffeb3b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+/* -------------------- FLOATING SOCIALS -------------------- */
 .floating-socials {
     position: fixed;
     top: 30%;
@@ -457,411 +486,106 @@ body.dark footer {
     box-shadow: 0 0 15px gold;
 }
 
-/* Reveal Animations */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.round-logo {
-    /* Set a fixed size for the logo */
-    width: 20px; /* Adjust size as needed */
-    height: 20px;
-
-    /* Create the perfect circle */
-    border-radius: 50%;
-
-    /* Optional: Ensure the image covers the circle without distortion */
-    object-fit: cover;
-}
-
-/* -------------------- HEADER -------------------- */
-header {
-  width: 100%;
-  background: #f8f8f8;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo + Brand */
-.logo-text {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.circular-frame img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.brand-name {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #222;
-  white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Navigation Links */
-nav {
-  display: flex;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
-}
-
-#darkModeBtn {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-}
-
-/* -------------------- MOBILE -------------------- */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
+/* -------------------- MOBILE RESPONSIVENESS -------------------- */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* hide links on mobile initially */
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    background: #fff;
-    flex-direction: column;
-    width: 200px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
+    .menu-toggle {
+        display: block;
+    }
 
-  .nav-links li {
-    margin: 10px 0;
-  }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        flex-direction: column;
+        background: #fff;
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-  .menu-toggle {
-    display: block;
-  }
+    .nav-links.active {
+        display: flex;
+    }
 
-  /* Adjust logo + text if needed on smaller screens */
-  .logo-text .brand-name {
-    font-size: 1.2rem;
-  }
+    .circular-frame img {
+        width: 40px;
+        height: 40px;
+    }
 
-  .circular-frame img {
-    width: 40px;
-    height: 40px;
-  }
+    .brand-name {
+        font-size: 1.2rem;
+    }
 }
-
-/* ----- CIRCULAR LOGO FRAME ----- */
-.circular-frame {
-    width: 60px;             /* Adjust size */
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;        /* Makes the frame circular */
-    border: 3px solid #222;  /* Optional border */
+/* FLEX CONTAINER SECTION */
+.flex-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    flex-wrap: wrap;           /* allow items to wrap on smaller screens */
+    gap: 20px;                 /* space between items */
+    padding: 20px 0;
 }
 
-.circular-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* Ensures perfect fit inside circle */
-}
-
-/* ----- NAVIGATION ----- */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #222;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-#darkModeBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-/* ABOUT US SECTION */
-#about\ us .container {
-    text-align: center;   /* Center all text */
-}
-
-/* TEAM CARD */
-.team-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-}
-
-/* IMAGE STYLE */
-.team-card img {
-    width: 160px;              /* Adjust size */
-    height: 160px;
-    border-radius: 50%;        /* Circular photo */
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-/* Logo + Text Container */
-.logo-text {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* space between logo and text */
-}
-
-/* Brand Name Styling */
-.brand-name {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #222; /* or any color you like */
-}
-
-/* Circular Logo Styling */
-.circular-frame img {
-  width: 50px;  /* adjust as needed */
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .circular-frame img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .brand-name {
-    font-size: 1.2rem;
-  }
-
-  .nav-links {
-    font-size: 0.9rem;
-  }
-}
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none; /* hidden on desktop */
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none; /* hidden on desktop */
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* show toggle on mobile */
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: -220px; /* hidden offscreen initially */
-    flex-direction: column;
-    background: #fff;
-    width: 200px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    right: 10px; /* slide in when active */
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
-  .circular-frame img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .brand-name {
-    font-size: 1.2rem;
-  }
-}
-/* styles.css */
-/* Center the heading */
-.center-bold {
+.flex-item {
+    background: linear-gradient(135deg, #ffd700, #ffecb3); /* gold gradient */
+    color: #222;                                       /* text color */
+    padding: 30px 40px;
+    border-radius: 15px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    max-width: 800px;           /* prevent flex-item from stretching too wide */
+    width: 100%;                /* full width on small screens */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.flex-item:hover {
+    transform: scale(1.05);       /* slight grow */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #ffecb3, #ffd700); /* hover gradient */
+}
+
+/* Subtitles inside flex-item */
+.flex-item .sub-title {
+    margin: 10px 0;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
+    color: #222;
 }
 
-/* Style the list as buttons */
-.stylish-list {
-    list-style: none;       /* remove bullets */
-    padding: 0;
-    text-align: center;
+/* Bold description inside flex-item */
+.flex-item b {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #444;
+    line-height: 1.5;
 }
 
-.stylish-list li {
-    display: inline-block;
-    background-color: #4CAF50;   /* button color */
-    color: white;                /* text color */
-    padding: 12px 25px;          /* spacing inside button */
-    margin: 10px;
-    border-radius: 8px;          /* rounded corners */
-    font-weight: normal;
-    cursor: pointer;
-    transition: all 0.3s ease;   /* smooth hover effect */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .flex-item {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    .flex-item .sub-title {
+        font-size: 1.2rem;
+    }
 }
 
-/* Hover effect */
-.stylish-list li:hover {
-    background-color: #45a049;  /* darker green */
-    font-weight: bold;           /* bold on hover */
-    color: #ffeb3b;              /* change text color */
-    transform: translateY(-3px); /* lift effect */
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-}
-/* CSS */
-.flex-container {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;    /* center vertically */
-  padding: 20px;
-}
-
-.flex-item {
-  background-color: #f5f5f5; /* light gray background */
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth animation */
-  cursor: pointer;
-}
-
-.flex-item:hover {
-  transform: scale(1.05); /* grow slightly on hover */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* subtle shadow */
-}
-
-.sub-title {
-  margin: 10px 0;
-}
-
-/* CSS */
-.flex-container {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;    /* center vertically */
-  height: 200px;          /* adjust as needed */
-  padding: 20px;
-}
-
-.flex-item {
-  background-color: #f0f0f0; /* light gray background */
-  padding: 20px 40px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
-  cursor: pointer;
-}
-
-.flex-item:hover {
-  transform: scale(1.1); /* grow slightly on hover */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* subtle shadow */
-}
-
-.sub-title {
-  margin: 0;
-  font-size: 24px;
-}
-.flex-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;       /* allows items to wrap on smaller screens */
-  padding: 20px;
-  gap: 20px;             /* space between items if multiple */
-}
-
-.flex-item {
-  background-color: #f0f0f0;
-  padding: 20px 40px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  width: 100%;           /* full width on mobile */
-  max-width: 400px;      /* limit width on larger screens */
-}
-
-.flex-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.sub-title {
-  margin: 0;
-  font-size: 1.5rem;     /* relative size for scaling on mobile */
-}
-
-/* Optional: adjust font size on very small screens */
 @media (max-width: 480px) {
-  .sub-title {
-    font-size: 1.2rem;
-  }
+    .flex-container {
+        padding: 10px 0;
+    }
 
-  .flex-item {
-    padding: 15px 20px;
-  }
+    .flex-item {
+        padding: 15px;
+    }
+
+    .flex-item .sub-title {
+        font-size: 1rem;
+    }
 }
