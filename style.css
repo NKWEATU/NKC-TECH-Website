@@ -958,3 +958,23 @@ body.dark footer {
     }
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: gold;
+
+    /* FIX SLANT — centers the icon perfectly */
+    line-height: 1;
+    transform: rotate(0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: #111;
+    border-radius: 8px;
+}
