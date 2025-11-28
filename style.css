@@ -965,3 +965,19 @@ body.dark footer {
     cursor: pointer;
     color: gold;
 
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: gold;
+
+    /* Fix slanting issue */
+    line-height: 1;
+    transform: translateY(0);
+}
+
+.menu-toggle.active {
+    /* Prevent bending when toggled */
+    transform: translateY(0) rotate(0deg);
+}
