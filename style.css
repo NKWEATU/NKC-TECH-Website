@@ -959,7 +959,7 @@ body.dark footer {
 }
 
 .menu-toggle {
-    display: none;
+    display: block;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
