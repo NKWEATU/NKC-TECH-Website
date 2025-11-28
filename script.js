@@ -118,10 +118,17 @@ const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active'); // toggles menu visibility
+  document.body.classList.toggle('menu-open'); // optional: prevent background scroll
 });
+
+// Close menu when a nav link is clicked
 document.querySelectorAll('.nav-links li a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('active'); // closes menu after click
+    navLinks.classList.remove('active');
+    document.body.classList.remove('menu-open'); // allow scroll again
   });
 });
+
+
+
 

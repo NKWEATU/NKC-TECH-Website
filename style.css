@@ -752,14 +752,22 @@ body.dark footer {
 
 /* -------------------- MOBILE NAVIGATION FIX -------------------- */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
+
     .nav-links {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 70px;          /* below the header */
-        right: -220px;      /* hidden initially offscreen */
+        right: -240px;      /* hidden initially offscreen */
         width: 220px;       /* menu width */
-        background: #222;   /* dark background for contrast */
+        background: #222;   /* dark background */
         padding: 15px;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -768,7 +776,6 @@ body.dark footer {
         opacity: 0;         /* hidden initially */
     }
 
-    /* Slide-in effect when active */
     .nav-links.active {
         right: 10px;
         opacity: 1;
@@ -782,9 +789,78 @@ body.dark footer {
         color: gold;       /* visible on dark background */
         font-weight: 500;
         font-size: 1rem;
+        text-align: left;
     }
 
     #darkModeBtn {
         color: gold;       /* visible toggle button */
+        margin-top: 10px;
+    }
+
+    /* Make the nav-links appear over other content */
+    body.menu-open {
+        overflow: hidden;   /* prevent scrolling when menu open */
+    }
+}
+/* -------------------- MOBILE NAVIGATION LIVING THEME -------------------- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        color: gold;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;            /* below header */
+        right: -240px;        /* hidden initially */
+        width: 220px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        z-index: 1000;
+        opacity: 0;
+
+        /* lively gradient background */
+        background: linear-gradient(135deg, #222, #333, #444);
+        background-blend-mode: multiply;
+    }
+
+    .nav-links.active {
+        right: 10px;
+        opacity: 1;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .nav-links li a {
+        color: gold;            /* visible on gradient background */
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: left;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #ffecb3;         /* lighter gold on hover */
+        transform: translateX(5px);
+    }
+
+    #darkModeBtn {
+        color: gold;
+        margin-top: 10px;
+    }
+
+    /* Optional: prevent scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 }
