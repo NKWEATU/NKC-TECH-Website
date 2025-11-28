@@ -734,3 +734,41 @@ nav {
     font-size: 1.2rem;
   }
 }
+/* styles.css */
+/* Center the heading */
+.center-bold {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style the list as buttons */
+.stylish-list {
+    list-style: none;       /* remove bullets */
+    padding: 0;
+    text-align: center;
+}
+
+.stylish-list li {
+    display: inline-block;
+    background-color: #4CAF50;   /* button color */
+    color: white;                /* text color */
+    padding: 12px 25px;          /* spacing inside button */
+    margin: 10px;
+    border-radius: 8px;          /* rounded corners */
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.3s ease;   /* smooth hover effect */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Hover effect */
+.stylish-list li:hover {
+    background-color: #45a049;  /* darker green */
+    font-weight: bold;           /* bold on hover */
+    color: #ffeb3b;              /* change text color */
+    transform: translateY(-3px); /* lift effect */
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
