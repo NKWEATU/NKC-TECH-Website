@@ -730,3 +730,21 @@ body.dark footer {
     }
 }
 
+
+.menu-toggle {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; /* will show only on mobile */
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        z-index: 2000;
+    }
+
+
