@@ -104,7 +104,7 @@ const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');        // toggle menu visibility
-    menuToggle.classList.toggle('active');     // animate hamburger
+      menuToggle.classList.toggle('active');     // animate hamburger
     document.body.classList.toggle('menu-open'); // optional: prevent scroll when menu open
 });
 
