@@ -863,6 +863,50 @@ body.dark footer {
 
 
 
+
+
+
+
+#gallery {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img,
+.gallery-item video,
+.gallery-item iframe {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.gallery-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+
+
+
 /* Ensure desktop remains correct */
 @media (min-width: 769px) {
     .nav-links {
@@ -939,40 +983,6 @@ body.dark footer {
 
 
 
-#gallery {
-    padding: 40px;
-    text-align: center;
-}
-
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item img,
-.gallery-item video,
-.gallery-item iframe {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-
-.gallery-item {
-    background: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.caption {
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 500;
-}
 
 
 /* -------------------- MOBILE LOGO CIRCULAR -------------------- */
@@ -1065,7 +1075,5 @@ body.dark footer {
     .nav-links.active {
         display: flex;
     }
-
-
 
 
