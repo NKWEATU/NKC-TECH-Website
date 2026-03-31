@@ -818,6 +818,8 @@ body.dark footer {
     }
 
 }
+
+
 /* -------------------- FLEX CONTAINER HERO / SERVICES -------------------- */
 .flex-container {
     display: flex;
@@ -860,7 +862,6 @@ body.dark footer {
         font-size: 1.2rem;
     }
 }
-
 
 
 
