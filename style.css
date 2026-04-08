@@ -166,42 +166,97 @@ nav {
 }
 
 /* -------------------- SERVICES -------------------- */
+
 .section-title {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 30px;
+    margin-bottom: 10px;
+    font-size: 32px;
     font-weight: bold;
 }
 
 .sub-title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
     color: gold;
-    font-weight: bold;
+    font-weight: 500;
 }
 
+/* GRID FIX */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    align-items: stretch; /* KEY: balances all cards */
 }
 
+/* CARD DESIGN */
 .service-card {
-    background: black;
-    color: gold;
-    padding: 20px;
-    border-radius: 8px;
+    background: #0a0a0a;
+    color: #f5c542;
+    padding: 25px 20px;
+    border-radius: 12px;
     text-align: center;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+
+    display: flex;                 /* KEY */
+    flex-direction: column;        /* KEY */
+    justify-content: flex-start;
+    height: 100%;                 /* KEY for equal height */
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HOVER EFFECT */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* TITLE */
+.service-card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: gold;
+}
+
+/* LIST */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-card ul li {
+    margin: 8px 0;
+    font-weight: normal;
+    font-size: 15px;
+    color: #ddd;
+}
+
+/* OPTIONAL: subtle divider */
+.service-card ul li::before {
+    content: "• ";
+    color: gold;
+}
+
+/* CLEAN ANIMATION SPACE */
+.service-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 215, 0, 0.05);
     transition: 0.3s;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
+.service-card:hover::after {
+    height: 100%;
 }
-
 /* -------------------- PRICING -------------------- */
 #pricing {
     padding: 60px 0;
