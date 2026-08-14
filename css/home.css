@@ -1,0 +1,1071 @@
+/* =========================================
+   NKC-TECH HOME PAGE
+   Modern Responsive Styles
+========================================= */
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    color: #111827;
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER / NAVIGATION
+========================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(7, 18, 38, 0.88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.nav-container {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.circular-frame {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid #d4af37;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.92rem;
+
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d4af37;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   DARK MODE BUTTON
+========================================= */
+
+.dark-mode-btn {
+    border: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition: 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    background: rgba(212, 175, 55, 0.25);
+
+    transform: rotate(20deg);
+}
+
+
+/* =========================================
+   MOBILE MENU TOGGLE
+========================================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 5px 0;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #06152e 0%,
+            #0b2347 45%,
+            #071326 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   BACKGROUND LOGO
+========================================= */
+
+.hero-logo-background {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: min(750px, 80vw);
+    height: min(750px, 80vw);
+
+    transform: translate(-50%, -50%);
+
+    background-image:
+        url("../images/dark_Official_Logo.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: contain;
+
+    /*
+       Keep the logo subtle so it does
+       not interfere with the text.
+    */
+    opacity: 0.07;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HERO OVERLAY
+========================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(3, 10, 24, 0.35) 55%,
+            rgba(3, 10, 24, 0.82) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.hero-container {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    padding-top: 78px;
+
+    display: flex;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    width: 100%;
+
+    max-width: 900px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   HERO TAG
+========================================= */
+
+.hero-tag {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    padding: 8px 18px;
+
+    border: 1px solid rgba(212, 175, 55, 0.6);
+
+    border-radius: 50px;
+
+    color: #d4af37;
+
+    background: rgba(212, 175, 55, 0.12);
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================
+   HERO HEADING
+========================================= */
+
+.hero-content h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    /*
+       Strong shadow makes the heading
+       visible over the background logo.
+    */
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.8),
+        0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================
+   GOLD TEXT
+========================================= */
+
+.hero-content h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d4af37,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow: none;
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-description {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto 35px;
+
+    color: #ffffff;
+
+    font-size: clamp(1rem, 2vw, 1.2rem);
+
+    line-height: 1.8;
+
+    font-weight: 500;
+
+    text-align: center;
+
+    /*
+       Strong shadow improves readability.
+    */
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.9),
+        0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primary-btn {
+    background: #d4af37;
+
+    color: #071326;
+
+    box-shadow:
+        0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(212, 175, 55, 0.35);
+}
+
+.primary-btn span {
+    font-size: 1.2rem;
+
+    transition: transform 0.3s ease;
+}
+
+.primary-btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.secondary-btn {
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.13);
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 1px;
+}
+
+.scroll-indicator span {
+    display: block;
+
+    width: 20px;
+    height: 32px;
+
+    margin: auto auto 8px;
+
+    border: 2px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 20px;
+
+    position: relative;
+}
+
+.scroll-indicator span::after {
+    content: "";
+
+    position: absolute;
+
+    top: 6px;
+
+    left: 50%;
+
+    width: 4px;
+    height: 6px;
+
+    border-radius: 5px;
+
+    background: #d4af37;
+
+    transform: translateX(-50%);
+
+    animation: scrollDown 1.5s infinite;
+}
+
+@keyframes scrollDown {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, 0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, 10px);
+    }
+}
+
+
+/* =========================================
+   COUNTERS
+========================================= */
+
+.counters-section {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: -55px;
+
+    padding-bottom: 60px;
+}
+
+.counters-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.counter-box {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(7, 35, 71, 0.08);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.counter-box:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================
+   COUNTER ICON
+========================================= */
+
+.counter-icon {
+    font-size: 1.7rem;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   COUNTER NUMBER
+========================================= */
+
+.counter-box h3 {
+    font-size: 2.4rem;
+
+    color: #0b315f;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   COUNTER DESCRIPTION
+========================================= */
+
+.counter-box p {
+    color: #64748b;
+
+    font-size: 0.95rem;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   HERO ANIMATIONS
+========================================= */
+
+.fade-up {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    animation:
+        fadeUp 1s ease forwards;
+}
+
+.hero-tag {
+    animation-delay: 0.15s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.3s;
+}
+
+.hero-description {
+    animation-delay: 0.5s;
+}
+
+.hero-buttons {
+    animation-delay: 0.7s;
+}
+
+@keyframes fadeUp {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode {
+    background: #050b16;
+
+    color: #ffffff;
+}
+
+body.dark-mode .counter-box {
+    background: #0d1a2d;
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .counter-box h3 {
+    color: #d4af37;
+}
+
+body.dark-mode .counter-box p {
+    color: #aab6c7;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 78px;
+
+        left: 0;
+
+        width: 100%;
+
+        background:
+            rgba(5, 16, 34, 0.98);
+
+        backdrop-filter: blur(15px);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.4s ease;
+    }
+
+    nav.active {
+        max-height: 500px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 15px 6%;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-links a {
+        display: block;
+
+        font-size: 1rem;
+    }
+
+    .dark-mode-btn {
+        margin-top: 5px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE DEVICES
+========================================= */
+
+@media (max-width: 650px) {
+
+    .nav-container {
+        min-height: 70px;
+    }
+
+    .hero-section {
+        min-height: 90vh;
+    }
+
+    .hero-container {
+        padding-top: 90px;
+    }
+
+    .hero-content h1 {
+        letter-spacing: -2px;
+
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4.5rem
+            );
+    }
+
+    .hero-description {
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+        padding: 0 10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        max-width: 360px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .counters-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .counters-section {
+        margin-top: -30px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .hero-logo-background {
+        width: 90vw;
+
+        height: 90vw;
+
+        opacity: 0.06;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .circular-frame {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING SOCIAL ICONS
+========================================================= */
+
+.floating-socials {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 120px; /* Move icons above chatbot */
+
+    z-index: 9999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0, 0, 0, 0.25);
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+
+    .floating-socials {
+        right: 12px;
+
+        bottom: 105px;
+    }
+
+    .social-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+}

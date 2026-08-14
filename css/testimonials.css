@@ -1,0 +1,846 @@
+/* =========================================================
+   NKC-TECH TESTIMONIALS PAGE
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1180px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 18, 38, 0.94);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-container {
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-text {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.circular-frame {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border:
+        2px solid #d4af37;
+
+    background: #ffffff;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.brand-name {
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #d4af37;
+
+    transition:
+        width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark-mode-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    transform: rotate(20deg);
+
+    background:
+        rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 5px 0;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL SECTION
+========================================================= */
+
+.testimonials-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        170px 0 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #ffffff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.testimonials-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -260px;
+    right: -260px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    pointer-events: none;
+}
+
+.testimonials-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    bottom: -210px;
+    left: -210px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(11, 49, 95, 0.05);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.testimonials-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    margin:
+        0 auto 75px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.section-badge {
+    display: inline-block;
+
+    padding:
+        8px 17px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(11, 49, 95, 0.08);
+
+    color: #0b315f;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.section-title {
+    margin-bottom: 20px;
+
+    color: #071a33;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4rem
+        );
+
+    line-height: 1.1;
+
+    font-weight: 900;
+}
+
+.section-title span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.section-description {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #64748b;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TESTIMONIAL GRID
+========================================================= */
+
+.testimonial-grid {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL CARD
+========================================================= */
+
+.test-card {
+    position: relative;
+
+    min-height: 310px;
+
+    padding:
+        35px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5e7eb;
+
+    box-shadow:
+        0 10px 35px
+        rgba(7, 26, 51, 0.06);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Reveal */
+
+.test-card.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* Hover */
+
+.test-card:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(212, 175, 55, 0.45);
+
+    box-shadow:
+        0 25px 55px
+        rgba(7, 26, 51, 0.12);
+}
+
+
+/* =========================================================
+   QUOTE ICON
+========================================================= */
+
+.quote-icon {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    color:
+        rgba(212, 175, 55, 0.18);
+
+    font-size: 5rem;
+
+    font-family: Georgia, serif;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars {
+    margin-bottom: 20px;
+
+    color: #d4af37;
+
+    font-size: 1rem;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL TEXT
+========================================================= */
+
+.test-card > p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 30px;
+
+    color: #475569;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CLIENT
+========================================================= */
+
+.client {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   CLIENT AVATAR
+========================================================= */
+
+.client-avatar {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b315f,
+            #071a33
+        );
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    border:
+        2px solid #d4af37;
+}
+
+
+/* =========================================================
+   CLIENT NAME
+========================================================= */
+
+.client h4 {
+    margin-bottom: 3px;
+
+    color: #071a33;
+
+    font-size: 0.98rem;
+
+    font-weight: 800;
+}
+
+.client span {
+    color: #94a3b8;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   ANIMATION DELAYS
+========================================================= */
+
+.test-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.test-card:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.test-card:nth-child(3) {
+    transition-delay: 0.19s;
+}
+
+.test-card:nth-child(4) {
+    transition-delay: 0.26s;
+}
+
+.test-card:nth-child(5) {
+    transition-delay: 0.33s;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    background: #050b16;
+
+    color: #ffffff;
+}
+
+body.dark-mode .testimonials-section {
+    background:
+        linear-gradient(
+            180deg,
+            #071326,
+            #050b16
+        );
+}
+
+body.dark-mode .section-title {
+    color: #ffffff;
+}
+
+body.dark-mode .section-description {
+    color: #aab6c7;
+}
+
+body.dark-mode .section-badge {
+    background:
+        rgba(212, 175, 55, 0.1);
+
+    color: #d4af37;
+}
+
+body.dark-mode .test-card {
+    background: #0d1a2d;
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .test-card > p {
+    color: #aab6c7;
+}
+
+body.dark-mode .client h4 {
+    color: #ffffff;
+}
+
+body.dark-mode .client span {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        background:
+            rgba(5, 16, 34, 0.98);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.4s ease;
+    }
+
+    nav.active {
+        max-height: 600px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding:
+            15px 6%;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-links a {
+        display: block;
+
+        font-size: 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .testimonials-section {
+        padding:
+            130px 0 90px;
+    }
+
+    .testimonials-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .test-card {
+        min-height: 290px;
+
+        padding:
+            30px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .circular-frame {
+        width: 42px;
+        height: 42px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}

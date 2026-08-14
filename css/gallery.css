@@ -1,0 +1,941 @@
+/* =========================================================
+   NKC-TECH GALLERY PAGE
+   Modern Responsive Design
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1180px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 18, 38, 0.94);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-container {
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-text {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.circular-frame {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border:
+        2px solid #d4af37;
+
+    background: #ffffff;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.brand-name {
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d4af37;
+
+    transition:
+        width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DARK MODE BUTTON
+========================================================= */
+
+.dark-mode-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    transform:
+        rotate(20deg);
+
+    background:
+        rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 5px 0;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.gallery-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        170px 0 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #ffffff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.gallery-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -260px;
+    right: -260px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    pointer-events: none;
+}
+
+.gallery-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    bottom: -210px;
+    left: -210px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(11, 49, 95, 0.05);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GALLERY HEADER
+========================================================= */
+
+.gallery-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 780px;
+
+    margin:
+        0 auto 70px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.section-badge {
+    display: inline-block;
+
+    padding:
+        8px 17px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(11, 49, 95, 0.08);
+
+    color: #0b315f;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.section-title {
+    margin-bottom: 20px;
+
+    color: #071a33;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4rem
+        );
+
+    line-height: 1.1;
+
+    font-weight: 900;
+}
+
+.section-title span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.section-description {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #64748b;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.gallery-container {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   GALLERY ITEM
+========================================================= */
+
+.gallery-item {
+    position: relative;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px
+        rgba(7, 26, 51, 0.06);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Reveal */
+
+.gallery-item.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* Hover */
+
+.gallery-item:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(212, 175, 55, 0.45);
+
+    box-shadow:
+        0 22px 50px
+        rgba(7, 26, 51, 0.13);
+}
+
+
+/* =========================================================
+   MEDIA WRAPPER
+========================================================= */
+
+.media-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background:
+        #071a33;
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.media-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(7, 26, 51, 0.45);
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.35s ease;
+}
+
+.media-overlay span {
+    padding:
+        10px 18px;
+
+    border-radius: 50px;
+
+    background:
+        #d4af37;
+
+    color:
+        #071a33;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+}
+
+.media-wrapper:hover .media-overlay {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+.video-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.gallery-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #000;
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.caption {
+    min-height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        20px 22px;
+
+    color: #475569;
+
+    font-size: 0.92rem;
+
+    line-height: 1.6;
+}
+
+.caption strong {
+    color: #0b315f;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.9);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 70px
+        rgba(0, 0, 0, 0.5);
+
+    transform:
+        scale(0.9);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.lightbox.active img {
+    transform:
+        scale(1);
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE
+========================================================= */
+
+.lightbox-close {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background:
+        #d4af37;
+
+    color:
+        #071a33;
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    background: #050b16;
+
+    color: #ffffff;
+}
+
+body.dark-mode .gallery-section {
+    background:
+        linear-gradient(
+            180deg,
+            #071326,
+            #050b16
+        );
+}
+
+body.dark-mode .section-title {
+    color: #ffffff;
+}
+
+body.dark-mode .section-description {
+    color: #aab6c7;
+}
+
+body.dark-mode .section-badge {
+    background:
+        rgba(212, 175, 55, 0.1);
+
+    color: #d4af37;
+}
+
+body.dark-mode .gallery-item {
+    background: #0d1a2d;
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .caption {
+    color: #aab6c7;
+}
+
+body.dark-mode .caption strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .gallery-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        background:
+            rgba(5, 16, 34, 0.98);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.4s ease;
+    }
+
+    nav.active {
+        max-height: 600px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding:
+            15px 6%;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-links a {
+        display: block;
+
+        font-size: 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .gallery-section {
+        padding:
+            130px 0 90px;
+    }
+
+    .gallery-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .media-wrapper {
+        height: 250px;
+    }
+
+    .caption {
+        min-height: auto;
+
+        padding:
+            18px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .circular-frame {
+        width: 42px;
+        height: 42px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .media-wrapper {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}

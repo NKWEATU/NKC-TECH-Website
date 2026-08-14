@@ -1,0 +1,1020 @@
+/* =========================================================
+   NKC-TECH CONTACT PAGE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f8fafc;
+
+    color: #111827;
+
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1180px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 18, 38, 0.96);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-text {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.circular-frame {
+    width: 48px;
+    height: 48px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+        2px solid #d4af37;
+
+    background: #ffffff;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.brand-name {
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d4af37;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark-mode-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    transform: rotate(20deg);
+
+    background:
+        rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 5px 0;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        155px 0 110px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc,
+            #ffffff
+        );
+}
+
+
+/* Decorative circles */
+
+.contact-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+}
+
+.contact-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    bottom: -200px;
+    left: -200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(11, 49, 95, 0.05);
+}
+
+
+/* =========================================================
+   CONTACT HEADER
+========================================================= */
+
+.contact-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    margin:
+        0 auto 60px;
+
+    text-align: center;
+}
+
+.section-badge {
+    display: inline-block;
+
+    padding:
+        8px 18px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(11, 49, 95, 0.08);
+
+    color: #0b315f;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-title {
+    margin-bottom: 18px;
+
+    color: #071a33;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4rem
+        );
+
+    font-weight: 900;
+
+    line-height: 1.1;
+}
+
+.section-title span {
+    color: #d4af37;
+}
+
+.section-description {
+    color: #64748b;
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT WRAPPER
+========================================================= */
+
+.contact-wrapper {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CONTACT FORM CARD
+========================================================= */
+
+.contact-form-card {
+    padding: 40px;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5e7eb;
+
+    box-shadow:
+        0 18px 50px
+        rgba(7, 26, 51, 0.08);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.contact-form-card.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.card-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 30px;
+}
+
+.heading-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        rgba(212, 175, 55, 0.12);
+
+    font-size: 1.4rem;
+}
+
+.card-heading h2 {
+    color: #071a33;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 4px;
+}
+
+.card-heading p {
+    color: #64748b;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #071a33;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border:
+        1px solid #dbe2ea;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #111827;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 160px;
+
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d4af37;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(212, 175, 55, 0.1);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        14px 28px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b315f,
+            #071a33
+        );
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 0.95rem;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(7, 26, 51, 0.2);
+}
+
+.btn span {
+    color: #d4af37;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(34, 197, 94, 0.1);
+
+    color: #15803d;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+.success-message.show {
+    display: block;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-info {
+    padding:
+        20px 5px;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.7s ease 0.15s,
+        transform 0.7s ease 0.15s;
+}
+
+.contact-info.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.info-label {
+    color: #d4af37;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.contact-info h2 {
+    margin:
+        15px 0;
+
+    color: #071a33;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3rem
+        );
+
+    line-height: 1.15;
+}
+
+.contact-info h2 span {
+    color: #d4af37;
+}
+
+.info-description {
+    margin-bottom: 30px;
+
+    color: #64748b;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT INFO CARD
+========================================================= */
+
+.info-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5e7eb;
+
+    box-shadow:
+        0 10px 30px
+        rgba(7, 26, 51, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.info-card:hover {
+    transform:
+        translateX(5px);
+
+    border-color:
+        rgba(212, 175, 55, 0.5);
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(11, 49, 95, 0.08);
+
+    font-size: 1.2rem;
+}
+
+.info-card small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #94a3b8;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.info-card a {
+    color: #071a33;
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+}
+
+.info-card a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   MORE INFORMATION
+========================================================= */
+
+.more-info-card {
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a33,
+            #0b315f
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 15px 35px
+        rgba(7, 26, 51, 0.15);
+}
+
+.more-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+.more-info-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+}
+
+.more-info-card .more-info {
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    background: #050b16;
+
+    color: #ffffff;
+}
+
+body.dark-mode .contact-section {
+    background:
+        linear-gradient(
+            180deg,
+            #071326,
+            #050b16
+        );
+}
+
+body.dark-mode .section-title,
+body.dark-mode .contact-info h2,
+body.dark-mode .card-heading h2,
+body.dark-mode .form-group label {
+    color: #ffffff;
+}
+
+body.dark-mode .section-description,
+body.dark-mode .info-description,
+body.dark-mode .card-heading p {
+    color: #aab6c7;
+}
+
+body.dark-mode .contact-form-card,
+body.dark-mode .info-card {
+    background: #0d1a2d;
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #091323;
+
+    border-color:
+        rgba(255, 255, 255, 0.1);
+
+    color: #ffffff;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    background: #0d1a2d;
+}
+
+body.dark-mode .info-card a {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .contact-info {
+        padding:
+            10px 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        background:
+            rgba(5, 16, 34, 0.98);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.4s ease;
+    }
+
+    nav.active {
+        max-height: 600px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding:
+            15px 6%;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-links a {
+        display: block;
+
+        font-size: 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding:
+            130px 0 80px;
+    }
+
+    .contact-header {
+        margin-bottom: 40px;
+    }
+
+    .contact-form-card {
+        padding: 25px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 2.1rem;
+    }
+
+    .card-heading {
+        align-items: flex-start;
+    }
+
+    .info-card {
+        padding: 16px;
+    }
+
+    .info-card a {
+        font-size: 0.85rem;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}

@@ -1,0 +1,1237 @@
+/* =========================================================
+   NKC-TECH ABOUT PAGE
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    overflow-x: hidden;
+}
+
+.container {
+    width: min(1180px, 92%);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 18, 38, 0.94);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-container {
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-text {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.circular-frame {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border:
+        2px solid #d4af37;
+
+    background: #ffffff;
+}
+
+.circular-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.brand-name {
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #d4af37;
+
+    transition:
+        width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DARK MODE BUTTON
+========================================================= */
+
+.dark-mode-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    transform: rotate(20deg);
+
+    background:
+        rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    margin: 5px 0;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        170px 0 120px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #ffffff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative background */
+
+.about-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    top: -275px;
+    right: -275px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+}
+
+.about-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -225px;
+    left: -225px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(11, 49, 95, 0.05);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.about-header {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 780px;
+
+    margin:
+        0 auto 75px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.section-badge {
+    display: inline-block;
+
+    padding:
+        8px 17px;
+
+    margin-bottom: 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(11, 49, 95, 0.08);
+
+    color: #0b315f;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.section-title {
+    margin-bottom: 20px;
+
+    color: #071a33;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4rem
+        );
+
+    line-height: 1.1;
+
+    font-weight: 900;
+}
+
+.section-title span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.section-description {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #64748b;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
+.about-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr 1.15fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    margin-bottom: 120px;
+}
+
+
+/* =========================================================
+   FOUNDER VISUAL
+========================================================= */
+
+.founder-visual {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    transform:
+        translateX(-40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.founder-visual.show {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.image-frame {
+    position: relative;
+
+    width: 360px;
+    height: 440px;
+
+    padding: 10px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f2d675,
+            #b38b1d
+        );
+
+    box-shadow:
+        0 30px 70px
+        rgba(7, 26, 51, 0.18);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 17px;
+
+    background: #071a33;
+}
+
+
+/* =========================================================
+   EXPERIENCE BADGE
+========================================================= */
+
+.experience-badge {
+    position: absolute;
+
+    right: 5px;
+
+    bottom: -25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        17px 22px;
+
+    border-radius: 14px;
+
+    background:
+        #071a33;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 15px 35px
+        rgba(7, 26, 51, 0.25);
+}
+
+.experience-badge strong {
+    color: #d4af37;
+
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+}
+
+.experience-badge span {
+    margin-top: 3px;
+
+    color: #cbd5e1;
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   FOUNDER INFO
+========================================================= */
+
+.founder-info {
+    opacity: 0;
+
+    transform:
+        translateX(40px);
+
+    transition:
+        opacity 0.8s ease 0.15s,
+        transform 0.8s ease 0.15s;
+}
+
+.founder-info.show {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+.profile-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #d4af37;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.founder-info h2 {
+    margin-bottom: 8px;
+
+    color: #071a33;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
+
+    font-weight: 900;
+}
+
+.founder-role {
+    margin-bottom: 20px;
+
+    color: #64748b;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PORTFOLIO LINK
+========================================================= */
+
+.portfolio-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+
+    padding:
+        11px 18px;
+
+    border:
+        1px solid
+        rgba(11, 49, 95, 0.15);
+
+    border-radius: 50px;
+
+    color: #0b315f;
+
+    background:
+        rgba(11, 49, 95, 0.04);
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.portfolio-link:hover {
+    background: #0b315f;
+
+    color: #ffffff;
+
+    transform:
+        translateY(-3px);
+}
+
+.portfolio-link span {
+    color: #d4af37;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   FOUNDER MESSAGE
+========================================================= */
+
+.founder-message {
+    position: relative;
+
+    padding:
+        35px 35px 35px 45px;
+
+    border-left:
+        4px solid #d4af37;
+
+    border-radius:
+        0 18px 18px 0;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 12px 35px
+        rgba(7, 26, 51, 0.06);
+}
+
+.founder-message p {
+    color: #475569;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    text-align: justify;
+}
+
+.quote-mark {
+    position: absolute;
+
+    top: 5px;
+    left: 15px;
+
+    color:
+        rgba(212, 175, 55, 0.25);
+
+    font-size: 4rem;
+
+    font-family: Georgia, serif;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.benefits-section {
+    position: relative;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.benefits-section.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   BENEFITS HEADER
+========================================================= */
+
+.benefits-header {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.benefits-header h2 {
+    margin-bottom: 10px;
+
+    color: #071a33;
+
+    font-size: 2.2rem;
+
+    font-weight: 900;
+}
+
+.benefits-header p {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   BENEFITS GRID
+========================================================= */
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BENEFIT CARD
+========================================================= */
+
+.benefit-card {
+    position: relative;
+
+    min-height: 250px;
+
+    padding:
+        30px 25px;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5e7eb;
+
+    box-shadow:
+        0 10px 30px
+        rgba(7, 26, 51, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.benefit-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(212, 175, 55, 0.5);
+
+    box-shadow:
+        0 20px 45px
+        rgba(7, 26, 51, 0.12);
+}
+
+
+/* =========================================================
+   BENEFIT NUMBER
+========================================================= */
+
+.benefit-number {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    color:
+        rgba(11, 49, 95, 0.08);
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   BENEFIT ICON
+========================================================= */
+
+.benefit-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(212, 175, 55, 0.12);
+
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   BENEFIT TEXT
+========================================================= */
+
+.benefit-card h3 {
+    margin-bottom: 12px;
+
+    color: #071a33;
+
+    font-size: 1.05rem;
+
+    line-height: 1.4;
+}
+
+.benefit-card p {
+    color: #64748b;
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    background: #050b16;
+
+    color: #ffffff;
+}
+
+body.dark-mode .about-section {
+    background:
+        linear-gradient(
+            180deg,
+            #071326,
+            #050b16
+        );
+}
+
+body.dark-mode .section-title {
+    color: #ffffff;
+}
+
+body.dark-mode .section-description {
+    color: #aab6c7;
+}
+
+body.dark-mode .section-badge {
+    background:
+        rgba(212, 175, 55, 0.1);
+
+    color: #d4af37;
+}
+
+body.dark-mode .founder-info h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .founder-role {
+    color: #aab6c7;
+}
+
+body.dark-mode .founder-message {
+    background: #0d1a2d;
+}
+
+body.dark-mode .founder-message p {
+    color: #aab6c7;
+}
+
+body.dark-mode .portfolio-link {
+    color: #d4af37;
+
+    border-color:
+        rgba(212, 175, 55, 0.2);
+
+    background:
+        rgba(212, 175, 55, 0.05);
+}
+
+body.dark-mode .portfolio-link:hover {
+    background: #d4af37;
+
+    color: #071a33;
+}
+
+body.dark-mode .benefits-header h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .benefits-header p {
+    color: #aab6c7;
+}
+
+body.dark-mode .benefit-card {
+    background: #0d1a2d;
+
+    border-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .benefit-card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .benefit-card p {
+    color: #aab6c7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .about-content {
+        gap: 50px;
+    }
+
+    .benefits-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        background:
+            rgba(5, 16, 34, 0.98);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition:
+            max-height 0.4s ease;
+    }
+
+    nav.active {
+        max-height: 600px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding:
+            15px 6%;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-links a {
+        display: block;
+
+        font-size: 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-section {
+        padding:
+            130px 0 90px;
+    }
+
+    .about-header {
+        margin-bottom: 55px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+
+        margin-bottom: 90px;
+    }
+
+    .founder-visual {
+        justify-content: center;
+    }
+
+    .image-frame {
+        width: min(360px, 90vw);
+
+        height: 420px;
+    }
+
+    .experience-badge {
+        right: 2%;
+    }
+
+    .founder-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .founder-message {
+        padding:
+            30px 25px 30px 35px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .circular-frame {
+        width: 42px;
+        height: 42px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .image-frame {
+        height: 370px;
+    }
+
+    .experience-badge {
+        padding:
+            14px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    position: relative;
+
+    padding: 70px 20px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a33,
+            #0b315f
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.footer-content h2 {
+    margin-bottom: 15px;
+
+    color: #d4af37;
+
+    font-size: 1.8rem;
+}
+
+.footer-content p {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.7;
+}
+
+.footer-btn {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    border-radius: 8px;
+
+    background: #d4af37;
+
+    color: #071a33;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.footer-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(212, 175, 55, 0.3);
+}
+
+.copyright {
+    margin-top: 45px !important;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    font-size: 0.85rem;
+}
+
