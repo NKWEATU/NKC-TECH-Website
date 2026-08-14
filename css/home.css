@@ -529,26 +529,49 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    SECONDARY BUTTON
-========================================= */
+========================================================= */
 
 .secondary-btn {
-    color: #ffffff;
+    display: inline-flex;
 
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    align-items: center;
 
-    background: rgba(255, 255, 255, 0.06);
+    justify-content: center;
 
-    backdrop-filter: blur(10px);
+    padding: 14px 28px;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 10px;
+
+    background: #0b315f;
+
+    color: #ffffff !important;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.13);
+    background: #d4af37;
 
-    transform: translateY(-4px);
+    color: #071a33 !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(212, 175, 55, 0.25);
 }
-
 
 /* =========================================
    SCROLL INDICATOR
