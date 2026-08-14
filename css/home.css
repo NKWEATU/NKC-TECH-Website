@@ -1069,3 +1069,139 @@ body.dark-mode .counter-box p {
     }
 
 }
+
+/* =========================================================
+   CATCHY NKC-TECH FOOTER
+========================================================= */
+
+.site-footer {
+    position: relative;
+
+    margin-top: 80px;
+
+    padding: 35px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061529 0%,
+            #0b315f 50%,
+            #071a33 100%
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* GOLD DECORATIVE LINE */
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 120px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
+}
+
+
+/* DECORATIVE GLOW */
+
+.site-footer::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -100px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.08);
+
+    filter: blur(10px);
+}
+
+
+.footer-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* COPYRIGHT */
+
+.copyright {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1.6;
+}
+
+
+/* NKC-TECH BRAND EFFECT */
+
+.copyright::first-line {
+    color: #ffffff;
+}
+
+
+/* HOVER EFFECT */
+
+.site-footer:hover .copyright {
+    color: #d4af37;
+
+    transition:
+        color 0.4s ease;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        margin-top: 50px;
+
+        padding: 30px 15px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+
+}
