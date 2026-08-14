@@ -1,433 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NKC-TECH | Empowering Digital Minds</title>
-    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="css/home.css">
+
 </head>
+
 <body>
 
-<header>
+<header class="site-header">
     <div class="container nav-container">
+
         <!-- Logo + Brand -->
         <div class="logo-text">
             <div class="circular-frame">
                 <img src="images/officialLogo.png" alt="NKC-TECH Logo">
             </div>
+
             <span class="brand-name">NKC-TECH</span>
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <div class="menu-toggle">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
 
-        <!-- Navigation Links -->
-        <nav>
+        <!-- Navigation -->
+        <nav id="mainNav">
             <ul class="nav-links">
+
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#payment">Payment</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about us">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button id="darkModeBtn">🌙</button></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+
+                <!-- I changed the space in the ID -->
+                <li><a href="about.html">About Us</a></li>
+
+                <li>
+                    <a href="certifications.html">
+                        Certifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <button id="darkModeBtn" class="dark-mode-btn" aria-label="Toggle dark mode">
+                        🌙
+                    </button>
+                </li>
+
             </ul>
         </nav>
+
     </div>
 </header>
 
 
-<!-- HERO -->
-<section id="hero">
-    <div class="hero-content">
-        <h1 class="fade-up">Empowering Digital Minds</h1>
-       <p> We train the next generation of Software Engineers, empower businesses, and deliver innovative digital technology solutions powered by AI.  </p><a href="#services" class="btn fade-up">Explore Services</a>
-    </div>
-</section>
+<!-- =========================
+     HERO / HOME
+========================= -->
 
-<!-- COUNTERS -->
-<section id="counters">
-    <div class="container counters-grid">
-        <div class="counter-box">
-            <h3 class="counter" data-target="250">0</h3>
-            <p>Students Trained</p>
-        </div>
-        <div class="counter-box">
-            <h3 class="counter" data-target="120">0</h3>
-            <p>Projects Completed</p>
-        </div>
-        <div class="counter-box">
-            <h3 class="counter" data-target="8">0</h3>
-            <p>Years of Experience</p>
-        </div>
-    </div>
-</section>
+<section id="hero" class="hero-section">
 
-<!-- SERVICES -->
-<section id="services">
-    <div class="container">
-        <h2 class="section-title">Our Services</h2>
+    <!-- Background Logo -->
+    <div class="hero-logo-background"></div>
 
-        <div class="flex-container">
-            <div class="flex-item">
-                <h3 class="sub-title">Tech Training Academy (Online & Physical Classes)</h3>
-            </div>
-        </div>
+    <!-- Decorative Overlay -->
+    <div class="hero-overlay"></div>
 
-        <div class="services-grid">
-
-            <!-- Computer Basics -->
-            <div class="service-card fade-up">
-                <h2>Computer Basics</h2>
-                <ul>
-                    <li>Microsoft Word</li>
-                    <li>Microsoft Excel</li>
-                    <li>Microsoft PowerPoint</li>
-                    <li>Microsoft Access</li>
-
-                </ul>
-            </div>
-
-            <!-- Software Engineering -->
-            <div class="service-card fade-up">
-                <h2>SOFTWARE ENGINEERING</h2>
-                <ul>
-                    <li>Desktop Application Development</li>
-                    <li>Web Application Development</li>
-                    <li>Mobile App Development</li>
-                </ul>
-            </div>
-
-            <!-- Cloud & DevOps -->
-            <div class="service-card fade-up">
-                <h2>DevOps & CLOUD COMPUTING</h2>
-                <ul>
-                    <li>Git & GitHub</li>
-                    <li>CI/CD Pipelines</li>
-                    <li>Docker & Kubernetes</li>
-                    <li>AWS</li>
-                </ul>
-            </div>
-
-            <!-- Artificial Intelligence -->
-            <div class="service-card fade-up">
-                <h2>ARTIFICIAL INTELLIGENCE (AI)</h2>
-                <ul>
-                    <li>Python Programming</li>
-                    <li>AI Automation</li>
-                    <li>Machine Learning (ML)</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-        <!-- HTML -->
-<section>
-    <div>
-        <div class="flex-container">
-            <div class="flex-item">
-                <h3 class="sub-title">Digital IT Services</h3>
-            </div>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card fade-up">Build & Manage Your Website</div>
-            <div class="service-card fade-up">Business Name Registration</div>
-            <div class="service-card fade-up">Tax Identification Number(TIN) From JTB </div>
-            <div class="service-card fade-up">Online Applications</div>
-            <div class="service-card fade-up">General IT Consultancy</div>
-            <div class="service-card fade-up">Computer Software Installation</div>
-        </div>
-    </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-    <div class="container">
-        <h2 class="section-title">Pricing Plans</h2>
+    <div class="container hero-container">
 
 
+        <div class="hero-content">
 
-        <div class="price-card popular fade-up">
-            <h3>Professional</h3>
-            <ul>
-                <li>Full Training Program</li>
-                <li>Project Guidance</li>
-                <li>One-on-One Mentorship</li>
-            </ul>
-            <a href="#contact" class="btn">Join Now</a>
-        </div>
+            <span class="hero-tag fade-up">
+                NKC-TECH
+            </span>
 
-        <div class="price-card fade-up">
-            <h3>Business Services</h3>
-            <p class="price">Custom</p>
-            <ul>
-                <li>Build and manage your website</li>
-                <li>Business Registration (CAC)</li>
-                <li>IT Consultancy</li>
-            </ul>
-            <a href="#contact" class="btn">Request Quote</a>
-        </div>
-    </div>
+            <h1 class="fade-up">
+                Empowering
+                <span>Digital Minds</span>
+            </h1>
 
-</section>
-<section id="payment" class="payment-section">
+            <p class="hero-description fade-up">
+                We train the next generation of Software Engineers,
+                empower businesses, and deliver innovative digital
+                technology solutions powered by AI.
+            </p>
 
-    <h2>Payment Methods</h2>
-    <p>Kindly use any of the accounts listed below for payment while the setup of our corporate account is being finalized.</p>
+            <div class="hero-buttons fade-up">
 
-    <div class="payment-container">
-
-        <div class="payment-card">
-
-            <h3>Access Bank</h3>
-            <p><strong>Account Name:</strong> NKWEATU KENNEDY</p>
-            <p><strong>Account Number:</strong> 1710484908</p>
-
-            <a href="https://wa.me/message/26HZXLAUMP4SE1"
-               class="confirm-btn whatsapp"
-               target="_blank">
-                Confirm Payment
-            </a>
-
-        </div>
-
-        <div class="payment-card">
-
-            <h3>GTBank</h3>
-            <p><strong>Account Name:</strong> NKWEATU KENNEDY</p>
-            <p><strong>Account Number:</strong> 0221005247</p>
-
-            <a href="https://wa.me/message/26HZXLAUMP4SE1"
-               class="confirm-btn whatsapp"
-               target="_blank">
-                Confirm Payment
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-    <div class="container">
-        <h2 class="section-title">What Clients Say</h2>
-
-        <div class="testimonial-grid">
-            <div class="test-card fade-up">
-                <p>“NKC-TECH changed my career! Their coding classes made me a full stack developer.”</p>
-                <h4>- Chukwuemeka</h4>
-            </div>
-
-            <div class="test-card fade-up">
-                <p>“Very professional service. My business website was delivered quickly and perfectly.”</p>
-                <h4>- Marian</h4>
-            </div>
-
-            <div class="test-card fade-up">
-                <p>“Best IT company for both training and consultancy. Highly recommended!”</p>
-                <h4>- David</h4>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- GALLERY SECTION -->
-<section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-container">
-        <!-- IMAGE ITEM -->
-        <div class="gallery-item">
-            <img src="images/techTeach.jpg" loading="lazy" alt="Project Image">
-            <p class="caption"><strong>One on one mentorship</strong></p>
-        </div>
-        <!-- IMAGE ITEM -->
-        <div class="gallery-item">
-            <img src="images/project.png" loading="lazy" alt="Project Image">
-            <p class="caption"><strong>Many and more projects from our students</strong></p>
-        </div>
-        <!-- IMAGE ITEM -->
-        <div class="gallery-item">
-            <img src="images/explainJavaCode.jpg" loading="lazy" alt="Project Image">
-            <p class="caption"><strong>Explaining the core concepts of Software Engineering in an era Driven by AI.</strong> </p>
-        </div>
-        <!-- VIDEO ITEM (LOCAL FILE) -->
-        <div class="gallery-item">
-            <video controls preload="metadata" width="400">
-                <source src="videos/linkedin-video.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
-            <p class="caption"><strong>Online session with our student</strong></p>
-
-        </div>
-
-        <!-- VIDEO ITEM (LOCAL FILE) -->
-        <div class="gallery-item">
-            <video controls preload="metadata" width="400">
-                <source src="videos/teachingVideo.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
-            <p class="caption"><strong>Developing the next AI-Driven Software Engineers</strong></p>
-
-        </div>
-
-        <!-- VIDEO ITEM (LOCAL FILE) -->
-        <div class="gallery-item">
-            <video controls preload="metadata" width="400">
-                <source src="videos/mobileApp.mp4" type="video/mp4">
-                Your browser does not support video.
-            </video>
-
-            <p class="caption"><strong>Developing Mobile Application (Project)</strong></p>
-        </div>
-
-    </div>
-</section>
-<!-- ABOUT US -->
-<section id="about us">
-    <div class="container">
-        <h2 class="section-title">About Us</h2>
-
-        <div class="team-card fade-up">
-            <img src="images/profilePics.png" alt="Founder Photo" />
-            <h5>
-                <a href="https://nkweatu.github.io/kennedy-nkweatu/" target="_blank" rel="noopener noreferrer">
-                    NKWEATU KENNEDY
+                <a href="#services" class="btn primary-btn">
+                    Explore Services
+                    <span>→</span>
                 </a>
-            </h5>
-            <p><b>Founder & Lead Tech Instructor</b></p>
 
-            <p style="text-align: justify;">
-                "NKC-TECH is committed to providing
-                quality tech training with competent
-                tutors assigned to guide every
-                student from beginner to professional
-                level. With my experience, my team
-                and I are ready to help
-                shape your future in tech".     </p><br>
+                <a href="#contact" class="btn secondary-btn">
+                    Get Started
+                </a>
 
-            <h2 class="center-bold">BENEFITS:</h2>
-            <ul class="stylish-list">
-                <li>Become certified</li>
-                <li>Be job-ready</li>
-                <li>Build confidence in yourself</li>
-                <li>Improve your portfolio with real-world projects</li>
-            </ul>
-
-
-
-        </div>
-    </div>
-</section>
-
-<!-- CERTIFICATIONS SECTION -->
-<section id="certifications">
-    <h2 class="section-title">Our Validity</h2>
-    <p class="section-subtitle">Proof of our legitimacy and professional standards</p>
-
-    <div class="cert-grid">
-        <div class="cert-card">
-            <img src="images/cac_nkc_cert.jpg" alt="CAC Certificate - NKC TECH">
-            <h3>CAC Business Registration</h3>
-            <p>Official Corporate Affairs Commission Certificate proving NKC-TECH is a legally registered business.</p>
-        </div>
-
-        <div class="cert-card">
-            <img src="images/smedan_nkc_cert.jpg" alt="SMEDAN Certificate - NKC TECH">
-            <h3>SMEDAN Registration</h3>
-            <p>Small and Medium Enterprises Development Agency of Nigeria Certificate, confirming our business authenticity.</p>
-        </div>
-
-        <!-- NEW TIN CERTIFICATE CARD -->
-        <div class="cert-card">
-            <img src="images/NKC_TIN.jpg" alt="TIN Certificate - NKC TECH">
-            <h3>TIN Certificate</h3>
-            <p>Tax Identification Number document verifying NKC-TECH’s compliance with tax registration requirements.</p>
-        </div>
-    </div>
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-
-        <p id="successMsg">Message sent successfully!</p>
-
-        <div class="contact-info">
-            <div class="contact-details">
-                <ul>
-                    <li class="phone">Phone: 07025852772</li>
-                    <li class="email">Email: nkctechacademy@gmail.com</li>
-                    <li class="more-info">For More Info: Please click on the social media handles or chatbot displayed on this website for more enquiries</li>
-                </ul>
             </div>
 
-
         </div>
+
     </div>
+
 </section>
 
-<footer>
-    <h2>ATS-Friendly CV Template</h2>
-    <p>
-        This is a professional CV template that helped me secure a tech job at NIIT.
-        Perfect for software engineers, students, and job seekers.
-    </p>
+<!-- =========================
+     COUNTERS
+========================= -->
 
-    <a href="https://selar.com/x11833eho7" target="_blank">
-        Download Now
-    </a>
-    <p>© 2025 NKC-TECH. All Rights Reserved.</p>
-</footer>
+<section id="counters" class="counters-section">
 
-<script src="script.js"></script>
-<!-- FLOATING SOCIAL ICONS -->
+    <div class="container counters-grid">
+
+        <div class="counter-box">
+
+            <div class="counter-icon">
+                👨‍💻
+            </div>
+
+            <h3 class="counter" data-target="250">
+                0
+            </h3>
+
+            <p>Students Trained</p>
+
+        </div>
+
+
+        <div class="counter-box">
+
+            <div class="counter-icon">
+                🚀
+            </div>
+
+            <h3 class="counter" data-target="120">
+                0
+            </h3>
+
+            <p>Projects Completed</p>
+
+        </div>
+
+
+        <div class="counter-box">
+
+            <div class="counter-icon">
+                ⭐
+            </div>
+
+            <h3 class="counter" data-target="8">
+                0
+            </h3>
+
+            <p>Years of Experience</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Home JavaScript -->
+<script src="js/home.js"></script>
+
+
+<!-- =====================================================
+     FLOATING SOCIAL ICONS
+===================================================== -->
+
 <div class="floating-socials">
-    <a href="https://wa.me/message/26HZXLAUMP4SE1" class="social-icon whatsapp" target="_blank">
-        <img src="images/whatsapp.jpg" alt="WhatsApp">
+
+    <!-- WhatsApp -->
+    <a
+            href="https://wa.me/message/26HZXLAUMP4SE1"
+            class="social-icon whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact NKC-TECH on WhatsApp"
+    >
+        <img
+                src="images/whatsapp.jpg"
+                alt="WhatsApp"
+        >
     </a>
 
-    <a href="https://www.instagram.com/nkctech_services?utm_source=qr&igsh=bzBnanY2dnRzb3Ry" class="social-icon instagram" target="_blank">
-        <img src="images/instagram.jpg" alt="Instagram">
+
+    <!-- Instagram -->
+    <a
+            href="https://www.instagram.com/nkctech_services?utm_source=qr&igsh=bzBnanY2dnRzb3Ry"
+            class="social-icon instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="NKC-TECH Instagram"
+    >
+        <img
+                src="images/instagram.jpg"
+                alt="Instagram"
+        >
     </a>
 
-    <a href="https://www.facebook.com/NkcTechServices/" class="social-icon facebook" target="_blank">
-        <img src="images/facebook.png" alt="Facebook">
+
+    <!-- Facebook -->
+    <a
+            href="https://www.facebook.com/NkcTechServices/"
+            class="social-icon facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="NKC-TECH Facebook"
+    >
+        <img
+                src="images/facebook.png"
+                alt="Facebook"
+        >
     </a>
-    <a href="https://www.tiktok.com/@nkctech_services?is_from_webapp=1&sender_device=pc" class="social-icon tiktok" target="_blank">
-        <img src="images/tiktok.png" alt="Tiktok">
+
+
+    <!-- TikTok -->
+    <a
+            href="https://www.tiktok.com/@nkctech_services?is_from_webapp=1&sender_device=pc"
+            class="social-icon tiktok"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="NKC-TECH TikTok"
+    >
+        <img
+                src="images/tiktok.png"
+                alt="TikTok"
+        >
     </a>
+
 </div>
 
-<!--Start of Tawk.to Script-->
+
+<!-- =====================================================
+     HOME JAVASCRIPT
+===================================================== -->
+
+<script src="js/home.js"></script>
+
+
+<!-- =====================================================
+     TAWK.TO CHATBOT
+===================================================== -->
+
 <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/69830fc8f17d0d1c3e8e15b3/1jgjvbakl';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function () {
+
+        var s1 = document.createElement("script");
+        var s0 = document.getElementsByTagName("script")[0];
+
+        s1.async = true;
+
+        s1.src =
+            'https://embed.tawk.to/69830fc8f17d0d1c3e8e15b3/1jgjvbakl';
+
+        s1.charset = 'UTF-8';
+
+        s1.setAttribute(
+            'crossorigin',
+            '*'
+        );
+
+        s0.parentNode.insertBefore(
+            s1,
+            s0
+        );
+
     })();
+
 </script>
-<!--End of Tawk.to Script-->
+
 </body>
 </html>
