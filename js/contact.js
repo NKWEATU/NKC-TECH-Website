@@ -90,7 +90,7 @@ animatedElements.forEach(element => {
 */
 
 const EMAILJS_PUBLIC_KEY = "krz8bAdNl6MKHtxeI";
-const EMAILJS_SERVICE_ID = "BblUZDcOS6zeMWx0hhzS3";
+const EMAILJS_SERVICE_ID = "service_1pncd8t";
 const EMAILJS_TEMPLATE_ID = "template_0lqppph";
 
 
